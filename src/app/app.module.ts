@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,6 +7,8 @@ import { FormularioAComponent } from './formulario-a/formulario-a.component';
 import { FormularioBComponent } from './formulario-b/formulario-b.component';
 import { FormularioCComponent } from './formulario-c/formulario-c.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
