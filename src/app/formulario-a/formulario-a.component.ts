@@ -1,23 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
+import { Component} from '@angular/core';
+import { Validators, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-a',
   templateUrl: './formulario-a.component.html',
   styleUrls: ['./formulario-a.component.css']
 })
-export class FormularioAComponent implements OnInit {
+export class FormularioAComponent {
 
-  constructor(private fb: FormBuilder) { }
+constructor(private fb: FormBuilder) { }
 
-  PersonaForm = this.fb.group({
-		nombre: [ 'Pepe', Validators.required ],
-		apellido: [ '' ],
+  personaForm = this.fb.group({
+    nombre: [ 'Pepe', Validators.required ],
+    apellido: [ '' ],
     edad: [ '' ],
     telefono: [ '' ]
-	});
+  });
 
-  ngOnInit(): void {
-  }
+  submit() {
+	  this.personaForm.value();
+
+		 this.personaForm.setValue({
+			nombre: 'Diego',
+			apellido: 'Maradona',
+			edad: 59,
+			telefono: [ '' ]
+		});
+
+		 this.personaForm.patchValue({ edad: 60 });
+	}
 
 }
