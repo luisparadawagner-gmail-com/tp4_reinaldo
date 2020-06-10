@@ -9,8 +9,9 @@ import { FormularioBComponent } from './formulario-b/formulario-b.component';
 import { FormularioCComponent } from './formulario-c/formulario-c.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { MatMenuModule} from '@angular/material/menu';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { MatMenuModule} from '@angular/material/menu';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

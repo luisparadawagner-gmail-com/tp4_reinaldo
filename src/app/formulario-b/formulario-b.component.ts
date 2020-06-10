@@ -2,6 +2,7 @@ import { Persona } from './../persona';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-formulario-b',
