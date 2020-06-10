@@ -1,35 +1,38 @@
-import { FormBuilder, Validators } from '@angular/forms';
-import { Component, Input } from '@angular/core';
+import { Persona } from './../persona';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-formulario-b',
   templateUrl: './formulario-b.component.html',
   styleUrls: ['./formulario-b.component.css']
 })
-export class FormularioBComponent {
- // @Input() formu: FormBuilder;
+export class FormularioBComponent implements OnInit {
 
- constructor(private formu: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}   
 
-  personaForm = this.formu.group({
-    nombre: [ 'Kiko', Validators.required ],
-    apellido: [ '' ],
-    edad: [ '' ],
-    telefono: [ '' ]
+  @Input() personaDeA: Persona;
+  personaForm : FormGroup;
+
+
+iniciarFormulario(personaA : Persona){
+  this.personaForm = this.fb.group({
+    nombre: [ personaA.nombre, Validators.required ],
+    apellido: [ personaA.apellido ],
+    edad: [ personaA.edad ],
+    telefono: [ personaA.telefono ]
   });
+}
+
+ngOnInit() {
+    debugger;
+    this.iniciarFormulario(this.personaDeA);
+  }
 
 
-  submit() {
-	  this.personaForm.value();
-
-		 this.personaForm.setValue({
-			nombre: 'Diego',
-			apellido: 'Maradona',
-			edad: 59,
-			telefono: [ '' ]
-		});
-
-		 this.personaForm.patchValue({ edad: 60 });
-	}
+submit() {
+		
+		}
 
 }

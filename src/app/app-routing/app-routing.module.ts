@@ -6,8 +6,9 @@ import { FormularioCComponent } from '../formulario-c/formulario-c.component';
 
 
 const routes: Routes = [
+
         {path: 'formulario-a', component: FormularioAComponent },
-        {path: 'formulario-b', component: FormularioBComponent },
+        {path: 'formulario-b', component: FormularioAComponent },
         {path: 'formulario-c', component: FormularioCComponent }
     ];
 

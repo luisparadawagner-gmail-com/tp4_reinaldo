@@ -1,5 +1,7 @@
-import { Component} from '@angular/core';
+import { Persona } from './../persona';
+import { Component, Output, EventEmitter} from '@angular/core';
 import { Validators, FormBuilder} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-a',
@@ -8,26 +10,27 @@ import { Validators, FormBuilder} from '@angular/forms';
 })
 export class FormularioAComponent {
 
-constructor(private fb: FormBuilder) { }
+constructor(private router: Router, private fb: FormBuilder) { }
+
+persona: Persona;
+showFormA: boolean = true;
+showFormB: boolean = false;
 
   personaForm = this.fb.group({
     nombre: [ 'Pepe', Validators.required ],
-    apellido: [ '' ],
-    edad: [ '' ],
-    telefono: [ '' ]
+    apellido: [ 'Argento' ],
+    edad: [ 43 ],
+    telefono: [4994949]
   });
 
   submit() {
-	  this.personaForm.value();
-
-		 this.personaForm.setValue({
-			nombre: 'Diego',
-			apellido: 'Maradona',
-			edad: 59,
-			telefono: [ '' ]
-		});
-
-		 this.personaForm.patchValue({ edad: 60 });
+    this.exportarPlantilla();
 	}
 
+  exportarPlantilla(){
+    debugger;
+    this.persona = this.personaForm.value;
+    this.showFormB = true;
+    this.showFormA = false;
+  }
 }

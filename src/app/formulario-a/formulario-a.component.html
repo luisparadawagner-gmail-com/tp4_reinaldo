@@ -1,20 +1,29 @@
-<p>formulario-a works!</p>
 
-<form [formGroup]='personaForm' (ngSubmit)=submit()>
-    <div class="datosPersona">
-        <label>Nombre
-            <input type="text" formControlName="nombre">
-        </label>
-        <label>Apellido
-            <input type="text" formControlName="apellido">
-        </label>
-        <label>Edad
-            <input type="text" formControlName="edad">
-        </label>
-        <label>Telefono
-            <input type="text" formControlName="telefono">
-        </label>
-    </div>
+<div *ngIf="showFormA">
+    <p>Formulario A de Ingreso Datos Personales</p>
 
-    <button type="submit">Guardar</button>
-</form>
+    <form [formGroup]='personaForm' (ngSubmit)=submit() >
+        <div class="datosPersona">
+            <label>Nombre
+                <input type="text" formControlName="nombre">
+            </label>
+            <label>Apellido
+                <input type="text" formControlName="apellido">
+            </label>
+            <label>Edad
+                <input type="text" formControlName="edad">
+            </label>
+            <label>Telefono
+                <input type="text" formControlName="telefono">
+            </label>
+        </div>
+    
+        <button type="submit">Guardar</button>
+        
+    </form>
+</div>
+
+
+<div *ngIf="showFormB">
+    <app-formulario-b [personaDeA]="persona"></app-formulario-b>
+</div>
