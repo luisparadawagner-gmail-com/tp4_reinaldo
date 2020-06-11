@@ -1,3 +1,4 @@
+import { Persona } from './../persona';
 import { Component, OnInit } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
@@ -31,9 +32,29 @@ export class FormularioCComponent implements OnInit {
   
   constructor() { }
 
+  personaExportar : Persona;
+
+  showFormC: boolean = true;
+  showFormB: boolean = false;
+
   ngOnInit(): void {
   }
 
+  onModificar(elemento: Tabla) {
+    debugger;
 
+    let personaTemp: Persona = {
+      nombre: elemento.nombre,
+      apellido: elemento.apellido,
+      edad: elemento.edad,
+      telefono: elemento.telefono
+    }
+
+    this.personaExportar = personaTemp;
+    this.showFormB = true;
+    this.showFormC = false;
+    debugger;
+    
+	}
 
 }

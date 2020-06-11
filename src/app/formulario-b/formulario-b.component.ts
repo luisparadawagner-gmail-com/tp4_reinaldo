@@ -14,6 +14,7 @@ export class FormularioBComponent implements OnInit {
   constructor(private fb: FormBuilder) {}   
 
   @Input() personaDeA: Persona;
+
   personaForm : FormGroup;
 
 
@@ -25,6 +26,8 @@ iniciarFormulario(personaA : Persona){
     telefono: [ personaA.telefono ]
   });
 }
+
+
 
 ngOnInit() {
     debugger;
